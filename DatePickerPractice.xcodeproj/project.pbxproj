@@ -13,6 +13,7 @@
 		75D28F5F26F85245000718DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D28F5D26F85245000718DF /* Main.storyboard */; };
 		75D28F6126F8524B000718DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D28F6026F8524B000718DF /* Assets.xcassets */; };
 		75D28F6426F8524B000718DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D28F6226F8524B000718DF /* LaunchScreen.storyboard */; };
+		75D28FE826F9C175000718DF /* PickerLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D28FE726F9C175000718DF /* PickerLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		75D28F6026F8524B000718DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75D28F6326F8524B000718DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75D28F6526F8524B000718DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75D28FE726F9C175000718DF /* PickerLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				75D28F5726F85245000718DF /* AppDelegate.swift */,
 				75D28F5926F85245000718DF /* SceneDelegate.swift */,
 				75D28F5B26F85245000718DF /* ViewController.swift */,
+				75D28FE726F9C175000718DF /* PickerLabelView.swift */,
 				75D28F5D26F85245000718DF /* Main.storyboard */,
 				75D28F6026F8524B000718DF /* Assets.xcassets */,
 				75D28F6226F8524B000718DF /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D28F5C26F85245000718DF /* ViewController.swift in Sources */,
+				75D28FE826F9C175000718DF /* PickerLabelView.swift in Sources */,
 				75D28F5826F85245000718DF /* AppDelegate.swift in Sources */,
 				75D28F5A26F85245000718DF /* SceneDelegate.swift in Sources */,
 			);
