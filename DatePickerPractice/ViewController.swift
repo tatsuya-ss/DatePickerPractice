@@ -31,19 +31,12 @@ struct Second: TimeStructure {
     var number: Int = 3
 }
 
-struct Millisecond: TimeStructure {
-    var timeRange: [Int] = [Int](0...59)
-    var unit: String = "秒"
-    var number: Int = 4
-}
-
-
 final class ViewController: UIViewController {
 
     @IBOutlet private weak var datePicker: UIDatePicker!
     @IBOutlet private weak var pickerView: UIPickerView!
     
-    private let TimeStructures: [TimeStructure] = [Hour(), Minute(), Second(), Millisecond()]
+    private let TimeStructures: [TimeStructure] = [Hour(), Minute(), Second()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,26 +47,24 @@ final class ViewController: UIViewController {
     }
 
     private func setupUnitLabels() {
-        let divideCount = TimeStructures.count + 1
-        let width = (pickerView.bounds.width) / CGFloat(divideCount)
-        let layoutMargins = pickerView.layoutMargins.left
         TimeStructures.forEach {
             let label = UILabel()
             label.backgroundColor = .systemRed
             label.text = $0.unit
             pickerView.addSubview(label)
 
+            let divideCount = TimeStructures.count + 1
+            let pickerDisplayWidth = pickerView.bounds.width - pickerView.layoutMargins.left * 2
+            let divideWidth = pickerDisplayWidth / CGFloat(divideCount)
+            let halfDivideWidth = divideWidth / 2
+            let componentSpace = CGFloat(4) ///（仮）
+            let leftWidth = (divideWidth - componentSpace * CGFloat(TimeStructures.count - 1)) / 2
+            let eachLeading = leftWidth + halfDivideWidth + CGFloat($0.number - 1) * (divideWidth)
             label.translatesAutoresizingMaskIntoConstraints = false
             [label.leadingAnchor.constraint(equalTo: pickerView.leadingAnchor,
-                                           constant: width * CGFloat($0.number) - layoutMargins),
+                                            constant: eachLeading),
              label.centerYAnchor.constraint(equalTo: pickerView.centerYAnchor)]
                 .forEach { $0.isActive = true }
-            
-//            label.frame = CGRect(x: width * CGFloat($0.number) - label.bounds.width / 2,
-//                                 y: pickerView.bounds.height / 2 - label.bounds.height / 2,
-//                                 width: label.bounds.width,
-//                                 height: label.bounds.height)
-            
         }
     }
     
@@ -100,7 +91,7 @@ extension ViewController: UIPickerViewDataSource {
                     forComponent component: Int,
                     reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
-        pickerLabel.textAlignment = .left
+        pickerLabel.textAlignment = .justified
         pickerLabel.text = String(TimeStructures[component].timeRange[row])
         pickerLabel.backgroundColor = .systemYellow
         return pickerLabel

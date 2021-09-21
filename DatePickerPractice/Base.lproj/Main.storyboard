@@ -16,27 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zjz-k8-aEW">
-                                <rect key="frame" x="0.0" y="144" width="414" height="216"/>
-                            </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0P-SN-FnD">
-                                <rect key="frame" x="0.0" y="368" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="345" width="414" height="216"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Zjz-k8-aEW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="HWz-dU-M6b"/>
-                            <constraint firstItem="Zjz-k8-aEW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ISx-2L-aIV"/>
-                            <constraint firstItem="Zjz-k8-aEW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QwX-Zl-91l"/>
                             <constraint firstItem="a0P-SN-FnD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TK9-vn-xIp"/>
-                            <constraint firstItem="a0P-SN-FnD" firstAttribute="top" secondItem="Zjz-k8-aEW" secondAttribute="bottom" constant="8" symbolic="YES" id="Z4K-TE-qJ8"/>
+                            <constraint firstItem="a0P-SN-FnD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ZPe-N7-CrP"/>
                             <constraint firstItem="a0P-SN-FnD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="exi-FD-EWX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="datePicker" destination="Zjz-k8-aEW" id="HPp-AO-eFQ"/>
                         <outlet property="pickerView" destination="a0P-SN-FnD" id="sIw-b2-crF"/>
                     </connections>
                 </viewController>
